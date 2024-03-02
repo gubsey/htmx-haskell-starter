@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>goblins</title>
+		<script src="/htmx"></script>
+	</head>
+	<body>
+		<form hx-post="/form" hx-target="#todos" hx-swap="beforeend" hx-on::after-request="this.reset()">
+		    <input type="text" name="msg"/>
+		    <input type="submit" value="Add Todo"/>
+		</form>
+		<div hx-get="/todos" hx-trigger="load" hx-swap="outerHTML">
+			
+		</div>
+	</body>
+</html>

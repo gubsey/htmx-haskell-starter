@@ -48,7 +48,7 @@ extra-doc-files:    CHANGELOG.md
 -- extra-source-files:
 
 common warnings
-    ghc-options: 
+    ghc-options: -Wall
 
 executable haskell-web
     -- Import common warning flags.
@@ -66,10 +66,14 @@ executable haskell-web
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.17.2.1
                     , warp >= 3.4.0 && < 3.5
+                    , time
+                    , text
                     , blaze-builder
                     , http-types
                     , utf8-string
                     , wai
+                    , wai-extra
+                    , sqlite-simple
 
     -- Directories containing source files.
     hs-source-dirs:   app
